@@ -48,7 +48,6 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_TAGS_OFFSET := 0x01e00000
 BOARD_KERNEL_PAGESIZE := 2048
-BUILD_PREBUILT_KERNEL:= true
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive androidboot.usbcontroller=7000000.dwc3
@@ -64,6 +63,9 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 314572800 #43
 BOARD_VENDORIMAGE_PARTITION_SIZE := 503316480 #41
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 1048576 #31
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+# Vendor separation
+TARGET_COPY_OUT_VENDOR := vendor
 
 #Init
 TARGET_INIT_VENDOR_LIB := libinit_j8y18lte
